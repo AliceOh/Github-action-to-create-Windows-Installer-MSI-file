@@ -31,8 +31,19 @@ async function go_msi(version, exefile) {
   const binPath = path.join(cwd, 'bin');
   fs.mkdirSync(binPath);
   console.log('moving exe to bin/exe');
-  fs.renameSync(path.join(cwd, exefile), path.join(binPath, exefile));
+  const appPath = path.join(cwd, 'application');
+  // fs.renameSync(path.join(appPath, exefile), path.join(binPath, exefile)); // copy exe file
+  fs.cpSync(appPath, binPath, {recursive: true}); // copy ./application folder which can have exe file and dependent files
 
+  try {
+    await exec.exec(
+      '"C:\\Program Files\\go-msi\\go-msi.exe"',
+      ['set-guid'],
+      options);
+  } catch(e) {
+    core.setFailed(e.message);
+  }
+  
   try {
     await exec.exec(
       '"C:\\Program Files\\go-msi\\go-msi.exe"',

@@ -2,9 +2,6 @@
 
 This action create Windows Installer MSI files for the input exe file.
 
-## Precondition
-On Windows, Install Wix https://wixtoolset.org/
-
 ## Inputs
 
 ## Version, optional

@@ -16,4 +16,4 @@ The Windows installation files for the input exe file
         id: buildmsi
         uses: ./action # Uses own action
         with:
-          exefile: 'hellowworld.exe'
+          exefile: 'helloworld.exe'

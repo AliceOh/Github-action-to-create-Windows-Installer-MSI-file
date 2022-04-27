@@ -18,7 +18,7 @@ jobs:
         id: buildmsi
         uses: ./action # Uses own action
         with:
-          exefile: 'hellowworld.exe'
+          exefile: 'helloworld.exe'
 
       - name: Upload MSI for Windows to release page
         uses: "marvinpinto/action-automatic-releases@latest"

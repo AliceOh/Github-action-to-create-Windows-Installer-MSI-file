@@ -28,5 +28,5 @@ jobs:
           prerelease: true
           title: "Windows Development Build"
           files: |
-            hellowworld.exe.msi
+            helloworld.exe.msi
             

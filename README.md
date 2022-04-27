@@ -4,7 +4,10 @@ This action create Windows Installer MSI files for the input exe file.
 
 ## Inputs
 
-## Version, optional
+## exefile, required
+what exe file to wrap in the built MSI
+
+## version, optional
 what version to use for the built MSI, default is 0.0.1
 
 ## Outputs

@@ -7,7 +7,10 @@ On Windows, Install Wix https://wixtoolset.org/
 
 ## Inputs
 
-## Version, optional
+## exefile, required
+what exe file to wrap in the built MSI
+
+## version, optional
 what version to use for the built MSI, default is 0.0.1
 
 ## Outputs

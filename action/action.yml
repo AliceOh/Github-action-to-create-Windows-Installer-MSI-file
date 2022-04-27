@@ -1,0 +1,12 @@
+name: 'Build MSI'
+description: 'Build and release Windows installers using WiX'
+inputs:
+  exefile:
+    description: 'exe file to wrap in the MSI installer'
+    required: true
+  version:
+    description: 'what version to use for the built MSI'
+    default: '0.0.1'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

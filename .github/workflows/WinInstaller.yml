@@ -1,0 +1,32 @@
+name: Windows Installers Creation 
+
+on: [push]
+
+
+jobs:
+  create-helloworld-windows-installers:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install go-msi
+        run: choco install -y "go-msi"
+
+      - name: Build MSI for Windows
+        id: buildmsi
+        uses: ./action # Uses own action
+        with:
+          exefile: 'hellowworld.exe'
+
+      - name: Upload MSI for Windows to release page
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "windows-latest"
+          prerelease: true
+          title: "Windows Development Build"
+          files: |
+            hellowworld.exe.msi
+            
